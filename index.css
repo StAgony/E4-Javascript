@@ -15,6 +15,14 @@
     font-family: digital;
     src: url(./fuentes/DS-DIGI.TTF);
 }
+@font-face{
+    font-family: screens;
+    src: url(./fuentes/ShareTechMono-Regular.ttf);
+}
+@font-face{
+    font-family: title;
+    src: url(./fuentes/Valorant\ Font.ttf);
+}
 /* /////////////////////////// GENERAL ////////////////////////////////// */
 body {
     background-color: var(--green);
@@ -24,8 +32,9 @@ body {
 }
 h1 {
     text-align: left;
-    margin: 2px;
+    margin: 4px;
     height: 10%;
+    font-family: title;
     
 }
 img {
@@ -53,6 +62,7 @@ img {
     text-align: center;
     border-width: 2px;
     border-style: solid;
+    font-family: screens;
     
 }
 .botones_left, .botones_right {
@@ -65,9 +75,17 @@ img {
 .left, .right{
     display: flex;
     flex-direction: column;
-    width: 48%;
-    
+    width: 48%;   
 }
+p {
+    font-family: screens;
+}
+li{
+    list-style: square;
+    list-style-position: outside;
+    font-family: screens;
+}
+
 /*////////////////////////// DERECHA//////////////////////////////////////*/
 .right{
     border: var(--black);
@@ -187,6 +205,75 @@ input::-webkit-inner-spin-button {
     margin: 2px;
     text-align: center;
 }
-.nonenone{
-    background-color: var(--gray);
+/*////////////////////////////////NONE////////////////////////*/
+.upN, .caracteristicasN{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50%;
+    margin: 2px;
+    margin-bottom: 4px;
+}
+.downN {
+    height: 40%;
+}
+.tiposN {
+    background-color: #ACACAC;
+    border-radius: 6px;
+    height: 100%;
+    margin: 2px;
+    width: 30%;
+}
+.caracteristicasN {
+    background-color: #ACACAC;
+    border-radius: 6px;
+    margin: 2px;
+    height: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+.fotoN {
+    object-fit: cover;
+}
+.foto-contenedorN{
+    height: 100%;
+    width: 70%;
+    background-color:#ACACAC;
+    border-radius: 6px;
+    margin: 2px;
+
+}
+.nombreN {
+    background-color:#ACACAC;
+    border-radius: 6px;
+    margin: 2px;
+    text-align: center;
+}
+/*////////////////////////error////////////////////////////////////////////*/
+.error{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+}
+.error-cartel{
+    background-color: red;
+    border-radius: 4px;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    font-size: 5em;
+    
+
+
+}
+.error-text{
+    background-color: red;
+    border-radius:  4px;
+    font-size: 2em;
+    height: 15%;
+    width: 80%;
 }
