@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E4 Pokedex de la salada</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="pokedex">
+        <div class="left">
+            <h1>POKEDEX</h1>
+            <div class="screen">
+                <div class="nombre"><p>----</p></div>
+                <div class="up">
+                    <div class="foto-contenedor"><img class="foto" src="./img/none.png" alt="none"></div>
+                        <div class="tipos">
+                            <p>----</p>
+                            <ul>
+                                
+                            </ul>
+                        </div>
+                </div>
+                <div class="down">
+                    <div class="caracteristicas">
+                        <div class="peso"><p>----</p></div>
+                        <div class="altura"><p>----</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="botones_left">
+                <input type="button" value="Anterior" class="boton1">
+                <input type="button" value="Siguiente" class="boton2">
+            </div>
+        </div>
+        <div class="right">
+            <div class="botones_right">
+                <input type="button" value="Shiny" class="boton3">
+                <input type="button" value="Back" class="boton4">
+            </div>
+            <div class="input">
+                <form class="formu" action="">
+                    <input type="number" id="num" placeholder="INGRESE EL POKE ID">
+                    <input type="submit" value="Buscar" id="submiteador"> 
+                </form>
+            </div>
+            <div class="fake"> <img id="fakekey" src="./img/fakekey.png" alt=""></div>
+        </div>
+    </div>
+<script src="./index.js"></script>
+</body>
+</html>
