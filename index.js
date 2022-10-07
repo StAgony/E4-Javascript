@@ -7,8 +7,6 @@ const shy = document.getElementById('boton3')
 const back = document.getElementById('boton4')
 const url = 'https://pokeapi.co/api/v2/pokemon/'
 
-
-
 const init = async ()=> {
     pokeform.addEventListener('submit', getnumber);
     ant.addEventListener('click', anterior)

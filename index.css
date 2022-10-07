@@ -9,7 +9,6 @@
     --green2: #51AC5D;
     --yellow: #D9CB31;
     --lightblue: #8EE3FF;
-
 }
 @font-face{
     font-family: digital;
@@ -38,7 +37,6 @@ h1 {
     margin: 4px;
     height: 10%;
     font-family: title;
-    
 }
 img {
     height: 100%;
@@ -66,7 +64,6 @@ img {
     border-width: 2px;
     border-style: solid;
     font-family: screens;
-    
 }
 .botones_left, .botones_right {
     display: flex;
@@ -96,7 +93,6 @@ li{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 .input{
     width: 100%;
@@ -109,7 +105,6 @@ li{
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    
 }
 #num {
     width: 90%;
@@ -123,9 +118,6 @@ li{
     border-color: var(--black);
     font-family: digital;
     font-size: xxx-large;
-    
-
-    
 }
 input::placeholder{
     color: #56FF34;
@@ -144,16 +136,12 @@ input::-webkit-inner-spin-button {
     width: 100%;
     object-fit: contain;
     margin: 6px;
-    
 }
 /*/////////////////////////////////IZQUIERDA/////////////////////////////*/
-
-
 .left{
     border-right-style: solid;
     border: var(--black);  
 }
-
 .screen {
     display: flex;
     flex-direction: column;
@@ -200,7 +188,6 @@ input::-webkit-inner-spin-button {
     background-color: var(--blue);
     border-radius: 6px;
     margin: 2px;
-
 }
 .nombre {
     background-color: var(--lightblue);
@@ -244,7 +231,6 @@ input::-webkit-inner-spin-button {
     background-color:#ACACAC;
     border-radius: 6px;
     margin: 2px;
-
 }
 .nombreN {
     background-color:#ACACAC;
@@ -269,9 +255,6 @@ input::-webkit-inner-spin-button {
     height: 80%;
     text-align: center;
     font-size: 5em;
-    
-
-
 }
 .error-text{
     background-color: var(--yellow);
