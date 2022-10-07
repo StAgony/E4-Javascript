@@ -30,6 +30,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+label {
+    display: none;
+}
 h1 {
     text-align: left;
     margin: 4px;
@@ -189,7 +192,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 .foto {
-    object-fit: cover;
+    object-fit: contain;
 }
 .foto-contenedor{
     height: 100%;
@@ -271,7 +274,7 @@ input::-webkit-inner-spin-button {
 
 }
 .error-text{
-    background-color: red;
+    background-color: var(--yellow);
     border-radius:  4px;
     font-size: 2em;
     height: 15%;

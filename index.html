@@ -10,23 +10,40 @@
     <div class="pokedex">
         <div class="left">
             <h1>POKEDEX</h1>
-            <div class="screen">
-                
+            <div class="screen" id="screen">
+                <div  class="nombreN"><p>----</p></div>
+                <div class="upN">
+                <div class="foto-contenedorN"  ><img class="foto" src="./img/none.png" alt="none"></div>
+                    <div class="tiposN">
+                        <p>----</p>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+            </div>
+            <div class="downN">
+                <div class="caracteristicasN">
+                    <div class="pesoN"><p>----</p></div>
+                    <div class="alturaN"><p>----</p></div>
+                </div>
+            </div> 
             </div>
             <div class="botones_left">
-                <input type="button" value="Anterior" class="boton1">
-                <input type="button" value="Siguiente" class="boton2">
+                <input type="button" value="Anterior" class="boton1" id="boton1">
+                <input type="button" value="Siguiente" class="boton2" id="boton2">
             </div>
         </div>
         <div class="right">
             <div class="botones_right">
-                <input type="button" value="Shiny" class="boton3">
-                <input type="button" value="Back" class="boton4">
+                <input type="button" value="Shiny" class="boton3" id="boton3">
+                <input type="button" value="Back" class="boton4" id="boton4">
             </div>
             <div class="input">
-                <form class="formu" action="">
+                <form novalidate id="pokeform" class="formu">
                     <input type="number" id="num" placeholder="INGRESE EL POKE ID">
+                    <label for="num"></label>
                     <input type="submit" value="Buscar" id="submiteador"> 
+                    <label for="submiteador"></label>
                 </form>
             </div>
             <div class="fake"> <img id="fakekey" src="./img/fakekey.png" alt=""></div>
