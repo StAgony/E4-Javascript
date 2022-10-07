@@ -22,6 +22,10 @@
     font-family: title;
     src: url(./fuentes/Valorant\ Font.ttf);
 }
+@font-face {
+    font-family: gameboy;
+    src: url(./fuentes/Pokemon_GB.ttf);
+}
 /* /////////////////////////// GENERAL ////////////////////////////////// */
 body {
     background-color: var(--green);
@@ -78,12 +82,12 @@ img {
     width: 48%;   
 }
 p {
-    font-family: screens;
+    font-family: gameboy;
 }
 li{
     list-style: square;
     list-style-position: outside;
-    font-family: screens;
+    font-family: gameboy;
 }
 
 /*////////////////////////// DERECHA//////////////////////////////////////*/
@@ -254,12 +258,19 @@ input::-webkit-inner-spin-button {
     width: 80%;
     height: 80%;
     text-align: center;
-    font-size: 5em;
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .error-text{
     background-color: var(--yellow);
     border-radius:  4px;
-    font-size: 2em;
+    font-size: 1em;
     height: 15%;
     width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

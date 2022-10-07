@@ -1,5 +1,9 @@
+
+///////////////////////////////variables/////////////////////////////////////////////
+
 const numero = document.getElementById('num')
 const pokeform = document.getElementById('pokeform')
+const pokefoto = document.getElementById('fotopokemon')
 const screen = document.getElementById('screen')
 const ant = document.getElementById('boton1')
 const sig = document.getElementById('boton2')
@@ -7,25 +11,67 @@ const shy = document.getElementById('boton3')
 const back = document.getElementById('boton4')
 const url = 'https://pokeapi.co/api/v2/pokemon/'
 
+let currentnumber
+let situationSH = false
+let situationBK = false
+
+//////////////////////////////////////////////init////////////////////////////////////////
+
 const init = async ()=> {
     pokeform.addEventListener('submit', getnumber);
     ant.addEventListener('click', anterior)
     sig.addEventListener('click', siguiente)
+    shy.addEventListener('click', shiny)
+    back.addEventListener('click', backpoke)
+}
 
+//////////////////////////////////////////botones////////////////////////////////////
+
+const shiny = async () => {
+    console.log('ENTRE A SHINY')
+    if (situationSH){
+        situationSH = false
+    }
+    else {
+        situationSH = true
+    }    
+    screen.innerHTML = await render(currentnumber)
+}
+
+const backpoke = async() => {
+    console.log('ENTRE A BACK')
+    if (situationBK){
+        situationBK = false
+    }
+    else {
+        situationBK = true
+    }    
+    screen.innerHTML = await render(currentnumber)
 }
 const anterior = async () => {
-    let newnid = await numero.value - 1
-    screen.innerHTML = await render(newnid) 
+    console.log(currentnumber)
+    situationBK = false
+    currentnumber = currentnumber - 1
+    screen.innerHTML = await render(currentnumber) 
 }
 
 const siguiente = async () => {
-    let newnid = await Number(numero.value) + 1
-    screen.innerHTML = await render(newnid) 
+    console.log(currentnumber)
+    situationBK = false
+    currentnumber = Number(currentnumber) + 1
+    screen.innerHTML = await render(currentnumber)
 }
+
+/////////////////////////////////////////////Funcionamiento base////////////////////////////////////
+
 const getnumber = async (n)=>{
     n.preventDefault();
-    if (numero.value >= 1 && numero.value <= 905){
-        screen.innerHTML = await render(numero.value)
+    situationSH = false
+    situationBK = false
+    currentnumber = numero.value
+
+    if (currentnumber >= 1 && currentnumber <= 905){
+        screen.innerHTML = await render(currentnumber)
     }  
     else {
         screen.innerHTML = `<div class="error">
@@ -35,13 +81,18 @@ const getnumber = async (n)=>{
         console.log('ERROR')   
     }
 }
-///////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////Promesas a la api//////////////////////////////////////
+
 const pokedata = async (nid) => {
     let NUMEROID = await nid
     const res = await fetch(url + NUMEROID);
     const data = await res.json();
     return await data; 
 }
+
+//////////////////////////////////////////////////render////////////////////////////////////
+
 const render = async (nid) => {
     let pokemon = await pokedata(nid)
     console.log('objeto a renderizar>>>>>>>>>>>')
@@ -49,7 +100,6 @@ const render = async (nid) => {
   
     const {name, height, weight, types, sprites} = pokemon
     
-
     const mariana = (tipos) => {
         let tiposlista = ''  
         tipos.forEach(element => {
@@ -58,14 +108,30 @@ const render = async (nid) => {
         })
         return tiposlista
     }
-    console.log ('pokemon a renderizar =>>>>>>' + name, height, weight, types, sprites)
-    
+
+    const setfoto = (sh,bk) => {
+        console.log("la situacion es: >>>>>>>>>>")
+        console.log(sh)
+        console.log(bk)
+        if (sh == true & bk == true){
+            return sprites.back_shiny     
+        }
+        else if(sh == false && bk == true){
+            return sprites.back_default   
+        }
+        else if(sh == true && bk== false){
+            return sprites.front_shiny  
+        }
+        else if(sh == false && bk == false ){
+            return sprites.front_default       
+        }
+    } 
     
     return `
             <div class="nombre"><p>${name}</p></div>
             <div class="up">
-                <div class="foto-contenedor">
-                    <img class="foto" src="${sprites.front_default}" alt="${name} foto">
+                <div class="foto-contenedor" id="fotopokemon">
+                    <img class="foto" src="${setfoto(situationSH,situationBK)}" alt="${name} foto">
                 </div>
                 <div class="tipos">
                 <p>Tipos: </p>
